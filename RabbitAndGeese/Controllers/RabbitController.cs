@@ -19,5 +19,28 @@ namespace RabbitAndGeese.Controllers
             storage.Add(rabbit);
 
         }
+        [HttpPost("{id}/geese")]
+        public IActionResult AddGooseToRabbit(int id, Goose goose)
+        {
+            var storage = new RabbitStorage();
+            var rabbit = storage.GetById(id);
+
+            if (rabbit == null) return NotFound();
+
+            rabbit.OwnedGeese.Add(goose);
+            return Ok();
+        }
+
+        [HttpPut("{id}/saddles")]
+        public IActionResult ProcureGooseSaddle(int id, Saddle saddle)
+        {
+            var storage = new RabbitStorage();
+            var rabbit = storage.GetById(id);
+
+            if (rabbit == null) return NotFound();
+
+            rabbit.OwnedSaddles.Add(saddle);
+            return Ok();
+        }
     }
 }
