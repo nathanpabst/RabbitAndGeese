@@ -11,6 +11,7 @@ namespace RabbitAndGeese.Models
         public Size Size { get; set; }
         public double Price { get; set; }
         public SaddleType Type { get; set; }
+        public bool InUse { get; set; }
 
         public enum SaddleType
         {

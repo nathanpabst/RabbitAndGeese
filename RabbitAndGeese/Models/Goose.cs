@@ -12,6 +12,8 @@ namespace RabbitAndGeese.Models
         public Size Size { get; set; }
 
         public bool Social { get; set; }
+        public Saddle Saddle { get; set; }
+        public string EmotionalState { get; set; }
     }
 
 }
