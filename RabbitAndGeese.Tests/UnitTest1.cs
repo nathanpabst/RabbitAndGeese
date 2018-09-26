@@ -70,5 +70,22 @@ namespace RabbitAndGeese.Tests
             Assert.Equal(originalSaddle, largeGoose.Saddle);
             Assert.Equal("Exhausted", largeGoose.EmotionalState);
         }
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(2, 3)]
+        [InlineData(7, 8)]
+        [InlineData(12, 13)]
+        public void adding_1_to_a_number_ads_1_to_the_number(int firstNumber, int expectedResult)
+        {
+            //Act
+            var result = firstNumber = 1;
+
+            //Assert
+            Assert.Equal(expectedResult, result);
+
+        }
+
+
     }
 }
